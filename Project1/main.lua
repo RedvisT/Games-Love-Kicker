@@ -1,4 +1,4 @@
-remove("menu")
+
 require("player")
 require("ball")
 
