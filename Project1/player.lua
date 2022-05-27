@@ -13,7 +13,7 @@ end
 
 function Player1:update(dt)
     self:move(dt)
-    self:checkBoundaries()
+    self:CheckBoundaries()
 end
 
 function Player1:move(dt)
@@ -24,7 +24,7 @@ function Player1:move(dt)
     end
 end
 
-function Player1:checkBoundaries()
+function Player1:CheckBoundaries()
     if  self.y < 0 then
         self.y = 0
     elseif self.y + self.height > love.graphics.getHeight() then
@@ -53,7 +53,7 @@ end
 
 function Player2:update(dt)
     self:move(dt)
-    self:checkBoundaries()
+    self:CheckBoundaries()
 end
 
 function Player2:move(dt)
@@ -64,7 +64,7 @@ function Player2:move(dt)
     end
 end
 
-function Player2:checkBoundaries()
+function Player2:CheckBoundaries()
     if  self.y < 0 then
         self.y = 0
     elseif self.y + self.height > love.graphics.getHeight() then

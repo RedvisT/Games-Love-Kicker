@@ -21,7 +21,7 @@ function Ball:update(dt)
 end
 
 function Ball:collide()
-    if checkCollision(self, Player1) then
+    if CheckCollision(self, Player1) then
         self.xVel = self.speed
         local middleBall = self.y +  self.height / 2
         local middlePayer1 = Player1.y + Player1.height / 2
@@ -30,7 +30,7 @@ function Ball:collide()
     end
 
 
-    if checkCollision(self, Player2) then
+    if CheckCollision(self, Player2) then
         self.xVel = -self.speed
         local middleBall = self.y + self.height / 2
         local middlePayer2 = Player2.y + Player2.height / 2
@@ -51,6 +51,10 @@ function Ball:collide()
         self.y = love.graphics.getHeight() / 2 - self.height / 2
         self.yVel = 0
         self.xVel = self.speed
+        ScoreB = ScoreB + 1
+        Sounds.crash:play()
+
+
     end
 
     if self.x + self.width > love.graphics.getWidth() then
@@ -58,14 +62,18 @@ function Ball:collide()
         self.y = love.graphics.getHeight() / 2 - self.height / 2
         self.yVel = 0
         self.xVel = -self.speed
+        ScoreA = ScoreA + 1
+        Sounds.crash:play()
     end
 
 end
+
 
 function Ball:move(dt)
     self.x = self.x + self.xVel * dt
     self.y = self.y + self.yVel * dt
 end
+
 
 function Ball:draw()
     love.graphics.draw(self.img, self.x, self.y)
