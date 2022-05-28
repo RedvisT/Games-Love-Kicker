@@ -45,7 +45,7 @@ function love.draw()
     if gameState == "MainMenu" then
         MapMenu:draw(0, 0, 1.35, 1.6)
         love.graphics.print( "Game Menu", love.graphics.getWidth() / 2.4 , 25, 0, 2.5)
-        love.graphics.print( "Press Enter to Start", love.graphics.getWidth() / 2.65 , 100, 0, 2)
+        love.graphics.print( "Press Enter to Start", love.graphics.getWidth() / 2.5 , 100, 0, 2)
         love.graphics.print( "Press z to Stop Music", love.graphics.getWidth() / 2.55 , 125, 0, 2)
         love.graphics.print( "Press x to Start Music", love.graphics.getWidth() / 2.58 , 150, 0, 2)
         love.graphics.print( "Press Esc to Exit", love.graphics.getWidth() / 2.39 , 175, 0, 2)
@@ -56,6 +56,7 @@ function love.draw()
         love.graphics.print( "Player 2 Press up to go up", love.graphics.getWidth() / 2.75 , 325, 0, 2)
         love.graphics.print( "Player 2 Press down to go down", love.graphics.getWidth() / 3 , 350, 0, 2)
         love.graphics.print( "Press Spacebar to Start", love.graphics.getWidth() / 2.65 , 400, 0, 2)
+        love.graphics.print( "Press p to Pause Game", love.graphics.getWidth() / 2.6 , 425, 0, 2)
 
     end
     if gameState == "Play" then
@@ -121,6 +122,10 @@ love.keypressed = function(pressed_key, key)
 
     if key == "space" then
         GamePause = false
+    end
+
+    if key == "p" then
+        GamePause = true
     end
 end
 
